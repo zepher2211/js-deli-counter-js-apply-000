@@ -1,6 +1,6 @@
-function takeANumber(line, name) {
- line.push(name);
- return `Welcome, ${name}. You are number ${line.length} in line.` ;
+var number = 1;
+function takeANumber(line) {
+ line.push(number++);
 }
 
 function nowServing(line) {
@@ -12,6 +12,12 @@ function nowServing(line) {
 function currentLine(line) {
   if (line.length === 0)
     return "The line is currently empty.";
-  else
-    return `The line is currently: 1. ${line[0]}, 2. ${line[1]}, 3. ${line[2]}`;
+  else {
+    var phrase = []
+    for (let i = 0; i < line.length; i++) {
+      let string = `${i+1}. ${line[i]}`
+      phrase.push(string)
+    }
+    return `The line is currently: ${phrase}`
+  }
 }
